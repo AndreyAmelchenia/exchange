@@ -85,10 +85,33 @@ footer .wrapper{
     text-align: justify;
     flex-basis: 100%;
     align-self: start;
+    margin-block-end: 2.44em;
 }
 .get-a-quote form{
     flex-basis: 38.75rem;
 }
+
+.get-a-quote fieldset{
+    display: flex;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.get-a-quote input{
+    border: 0;
+    width: 38.75rem;
+    font-size: 0.75rem;
+    color: #f48c8f;
+    line-height: 1.375rem;
+    border-radius: 5px;
+    background-color: #d6564f;
+    font-weight: 400;
+    text-align: left;
+    padding: 0.5rem 0.875rem;
+    margin-bottom: 0.875rem;
+}
+
 .get-a-quote .contact{
     flex-basis: 18.75rem;
 }
