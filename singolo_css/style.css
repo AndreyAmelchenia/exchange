@@ -62,12 +62,12 @@ h3{
 p{
     text-align: justify;
 }
-.p__first{
+.p_first{
     font-size: 1.125rem;
     line-height: 1.875rem;
     font-weight: 300;
 }
-.p__second{
+.p_second{
     font-size: 0.75rem;
     line-height: 1.375rem;
     font-weight: 400;
@@ -117,6 +117,7 @@ header{
     list-style-type: none;
 }
 .header__list__link{
+    letter-spacing: -0.016rem;
     color: #ffffff;
 }
 .header__list__link:hover{
@@ -179,6 +180,50 @@ header{
     background: #f2f2f2;
     margin: auto;
 }
+.our-services__wrapper{
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: flex-start;
+}
+.our-service__h2{
+    letter-spacing: -0.01rem;
+    margin-top: 3.6875rem;
+    color: #666d89;
+    flex-basis: 100%;
+}
+.our-service__p{
+    margin-top: 1.125rem;
+    margin-bottom: 2.875rem;
+    color: #767e9e;
+    flex-basis: 100%;
+}
+.our-service__layout{
+    display: flex;
+    width: 18.75rem;
+    height: 6rem;
+    align-items: flex-start;
+    margin-bottom: 1.6875rem;
+    overflow:hidden;
+}
+.our-service__layout__text{
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    margin-left: 1.125rem;
+}
+.our-service__h3{
+    margin-top: -0.1875rem;
+    color: #666d89;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.005rem;
+}
+.our-service__layout__p{
+    color: #767e9e;
+    flex-basis: 100%;
+    line-height: 1.35rem;
+    letter-spacing: 0.0015rem;
+}
 .our-services__bottom{
     background: #ffffff;
 }
+/* SINGOLO2*/
