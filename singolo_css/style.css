@@ -384,3 +384,60 @@ margin-top: 1.4375rem;
 .about-us__bottom{
     background-color: #ffffff;
 }
+.get-a-quote{
+    width: 63.75rem;
+    height: 40.5rem;
+    background: #f06c64;
+    margin: auto;
+}
+.get-a-quote__wrapper{
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: flex-start;
+}
+.get-a-quote__h2{
+    color: #f0d8d9;
+    margin-block-start: 1.98em;
+    margin-block-end: 0.6em;
+    flex-basis: 100%;
+}
+.get-a-quote__p{
+    color: #f0d8d9;
+    flex-basis: 100%;
+    margin-bottom: 0;
+}
+.get-a-quote__form{
+    display: flex;
+    flex-basis: 38.75rem;
+    flex-flow: column;
+    align-content: flex-start;
+}
+.get-a-quote__form__detail,
+.get-a-quote__form__input{
+    width: 36.9rem;
+    font-size: 0.75rem;
+    font-weight: 400;
+    text-align: left;
+    color: #f48c8f;
+    border-radius: 5px;
+    background-color: #d6564f;
+    border: 0;
+}
+.get-a-quote__form__input{
+    padding: 0.5rem 0.875rem;
+    margin-bottom: 1rem;
+}
+.get-a-quote__form__detail{
+    height: 11.75rem;
+    padding: 0.42rem 0.875rem;
+    resize: none;
+}
+.get-a-quote__bottom{
+    background: #ea676b;
+}
+footer{
+    width: 63.75rem;
+    height: 4.75rem;
+    background: #2d303a;
+    margin: auto;
+}
