@@ -34,6 +34,7 @@
     src: local('Lato Black'), local('Lato-Black'), url(https://fonts.gstatic.com/s/lato/v16/S6u9w4BMUTPHh50XSwiPGQ.woff2) format('woff2');
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
   }
+/*All*/
 *{
     margin: 0;
     padding: 0;
@@ -139,31 +140,24 @@ header{
     color: #f06c64;
 }
 .header__list{
+    list-style-type: none;
+    font-size: 0.75rem;
+    letter-spacing: -0.016rem;
     display: flex;
     width: 23.1875rem;
     justify-content: space-between;
 }
-.header__list__item{
-    list-style-type: none;
-    margin-top: 0.3rem;
-}
-.header__list__link:before{
-    content: "·";
-    color: #494e62;
-    position: relative;
-    top: 1px;
-    right: 13px;
-}
-.header__list__link{
-    letter-spacing: -0.016rem;
+.header__list__item:not(.header__list__item_mod){
+    cursor: pointer;
     color: #ffffff;
+    margin-top: 8px;
 }
-.header__list__link:hover{
+.header__list__item_mod{
+    cursor: pointer;
     color: #f06c64;
+    margin-top: 8px;
 }
-.header__list__link_mod{
-    margin-top: 1px;
-    letter-spacing: -0.016rem;
+.header__list__item:not(.header__list__item_mod):hover{
     color: #f06c64;
 }
 .header__bottom{
@@ -172,12 +166,14 @@ header{
 .slider-block{
     width: 63.75rem;
     height: 37.125rem;
-    background: #f06c64 ;
     margin: auto;
 }
 .slider-block__wrapper{
     justify-content: space-between;
     align-items: center;
+}
+.slider-block__arrow{
+    z-index: 1;
 }
 .slider-block__arrow__left{
     margin-top: -5px;
@@ -185,25 +181,43 @@ header{
     display: block; 
     width: 16px;
     height: 27px;
-    background: url(assets/image/chev_left.png);
+    background: url(assets/image/arrow_left.png);
 }
 .slider-block__arrow__left:hover{
     margin-top: -5px;
     margin-left: 2px;
-    background: url(assets/image/arrow_mod.png);
+    background: url(assets/image/arrow_left_mod.png);
 }
 /*block slider image*/
+.slider-block__sliders{
+    z-index: 0;
+    width: 900px;
+    display: flex;
+    left: 38px;
+    overflow: hidden;
+}
+.slider-block__slider__first,
+.slider-block__slider__second{
+    justify-content: space-evenly;
+    align-items: center;
+    display: flex;
+    position: relative;
+    width: 900px;
+    flex-shrink: 0;
+}
 .slider-block__vertical{
     top: -3px;
-    left: -7px;
+    left: -8px;
     width: 15.125rem;
     height: 30.25rem;
     position: relative;
-    background: url(assets/svg/vertical.svg);
+    background: url(assets/image/vertical_1.png);
 }
 .slider-block__vertical__body{
-    top: 66px;
-    left: 16px;
+    border: #c7c7c7 solid 3px;
+    border-radius: 4px;
+    top: 63px;
+    left: 13px;
     width: 11.75rem;
     height: 20.8125rem;
     position: relative;
@@ -211,7 +225,7 @@ header{
 }
 .slider-block__vertical__body img{
     top: -135px;
-    left: -15px;
+    left: -14px;
     position: relative;
 }
 .slider-block__horizontal{
@@ -220,11 +234,13 @@ header{
     width: 30.3125rem;
     height: 15.0625rem;
     position: relative;
-    background: url(assets/svg/horizontal.svg);
+    background: url(assets/image/horizontal_1.png);
 }
 .slider-block__horizontal__body{
-    top: 15px;
-    left: 61px;
+    border: #c7c7c7 solid 3px;
+    border-radius: 4px;
+    top: 12px;
+    left: 58px;
     width: 20.8125rem;
     height: 11.75rem;
     position: relative;
@@ -235,15 +251,31 @@ header{
     left: -125px;
     position: relative;
 }
+.slider-block__next{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.slider-block__next img{
+    width: 156.02px;
+    height: 314px;
+    position: relative;
+}
+.slider-block__second__body img{
+
+    width: 254.91px;
+    height: 513px;
+}
+
 .slider-block__arrow__right{
     margin-top: -3px;
     display: block; 
     width: 16px;
     height: 27px;
-    background: url(assets/image/chev_right.png);
+    background: url(assets/image/arrow_right.png);
 }
 .slider-block__arrow__right:hover{
-    background: url(assets/image/chev_left.png);
+    background: url(assets/image/arrow_right_mod.png);
 }
 .slider-block__bottom{
     background: #ea676b; 
@@ -296,6 +328,8 @@ header{
     flex-basis: 100%;
     line-height: 1.35rem;
     letter-spacing: 0.0015rem;
+    height: 3.9375rem;
+    overflow: hidden;
 }
 .our-services__bottom{
     background: #ffffff;
@@ -456,6 +490,8 @@ header{
     color: #666d89;
     margin-bottom: 0.5rem;
     letter-spacing: -0.005rem;
+    height: 1.375rem;
+    overflow: hidden;
 }
 .about-us__friend__p{
     color: #767e9e;

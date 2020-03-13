@@ -7,19 +7,16 @@
     <title>Singolo_FULL</title>
 </head>
 <body>
-    
     <!--Singolo1  start-->
-    <header class="header">
+    <header class="header" id="header">
         <div class="wrapper header__wrapper">
             <a class="header__logo" href="#"><h1>singolo<span class="header__logo_color">*</span></h1></a>
-            <ul class="header__list">
-                <li class="header__list__item">
-                    <a class="header__list__link_mod" href="#" >HOME</a>
-                </li>
-                <li class="header__list__item"><a class="header__list__link" href="#">SERVICES</a></li>
-                <li class="header__list__item"><a class="header__list__link" href="#">PORTFOLIO</a></li>
-                <li class="header__list__item"><a class="header__list__link" href="#">ABOUT</a></li>
-                <li class="header__list__item"><a class="header__list__link" href="#">CONTACT</a></li>
+            <ul class="header__list" id="header__list">
+                <a href="#header"><li href="#" class="header__list__item header__list__item_mod">HOME</li>
+                <a href="#our-services"><li class="header__list__item">SERVICES</li></a>
+                <a href="#portfolio"><li class="header__list__item">PORTFOLIO</li></a>
+                <a href="#about-us"><li class="header__list__item">ABOUT</li></a>
+                <a href="#get-a-quote"><li class="header__list__item">CONTACT</li></a>
             </ul>                    
         </div>
     </header>
@@ -29,14 +26,27 @@
             <div class="slider-block__arrow">
                 <a class="slider-block__arrow__left" href="#"></a>
             </div>
-            <div class="slider-block__vertical">
-                <div class="slider-block__vertical__body">
-                    <img src="assets/image/vertical.png" alt="">
+            <div class="slider-block__sliders">
+                <div class="slider-block__slider__first">
+                    <div class="slider-block__vertical">
+                        <div class="slider-block__vertical__body">
+                            <img src="assets/image/vertical.png" alt="">
+                        </div>
+                    </div>
+                    <div class="slider-block__horizontal">
+                        <div class="slider-block__horizontal__body">
+                            <img src="assets/image/horizontal.png" alt="">                       
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="slider-block__horizontal">
-                <div class="slider-block__horizontal__body">
-                    <img src="assets/image/horizontal.png" alt="">                       
+                <div class="slider-block__slider__second">
+                     <div class="slider-block__next">
+                        <img src="assets/image/slider-content.png" alt="">                       
+                        <div class="slider-block__second__body">
+                            <img src="assets/image/slider-content-2.png" alt="">                       
+                        </div>                        
+                        <img src="assets/image/slider-content-1.png" alt="">                       
+                    </div>
                 </div>
             </div>
             <div class="slider-block__arrow">
@@ -45,16 +55,13 @@
         </div>  
     </section>
     <section class="bottom slider-block__bottom"></section>
-    <section class="our-services">    
+    <section class="our-services" id="our-services">    
         <div class="wrapper our-services__wrapper">
             <h2 class="our-service__h2">Our Services</h2>
             <p class="p_first our-service__p">
-                Fusce dapibus, tellus ac cursus commodo, 
-                tortor mauris condimentum. Duis mollis,
-                non commodo luctus nisi erat porttitor 
-                ligula, eget lacinia odio sem nec elit.
-                Fusce dapibus, tellus ac cursus commodo, 
-                tortor mauris condimentum nibh.
+                Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis,
+                non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+                Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
             </p>
             <div class="our-service__layout">
                 <img class="our-service__layout__img" src="assets/image/pen.png" alt="">
@@ -103,8 +110,7 @@
                 <div class="our-service__layout__text">
                     <h3 class="our-service__h3">24 / 7 Support</h3>
                     <p class="p_second our-service__layout__p">
-                        Vivamus vel quam lacinia, tincidunt dui non, 
-                        vehicula nisi. Nulla a sem erat. Pellen-tesque 
+                        Vivamus vel quam lacinia, tincidunt dui non, vehicula nisi. Nulla a sem erat. Pellen-tesque 
                         egestas venenatis lorem.
                     </p>
                 </div>
@@ -114,8 +120,7 @@
                 <div class="our-service__layout__text">
                     <h3 class="our-service__h3">Feel Like A Star</h3>
                     <p class="p_second our-service__layout__p">
-                        Quisque hendrerit purus dapibus, ornare nibh 
-                        vitae, viverra nibh. Furce vitae aliquam tellus.
+                        Quisque hendrerit purus dapibus, ornare nibh vitae, viverra nibh. Furce vitae aliquam tellus.
                     </p>
                 </div>
             </div>   
@@ -125,10 +130,12 @@
     <!--singolo1 END-->
     
     <!--singolo2 START-->
-    <section class="portfolio">
+    <section class="portfolio" id="portfolio">
         <div class="wrapper portfolio__wrapper">
             <h2 class="portfolio__h2">Portfolio</h2>
-            <p class="p_first portfolio__p">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
+            <p class="p_first portfolio__p">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia
+                odio sem nec elit.
+            </p>
             <ul class="portfolio__list">
                 <li class="portfolio__item"><a class="portfolio__link portfolio__link_color" href="#">All</a></li>
                 <li class="portfolio__item"><a class="portfolio__link" href="#">Web Design</a></li>
@@ -180,15 +187,13 @@
         </div>  
     </section>
     <section class="bottom portfolio__bottom"></section>
-    <section class="about-us">
+    <section class="about-us" id="about-us">
         <div class="wrapper about-us__wrapper">
             <h2 class="about-us__h2">About Us</h2>
             <p class="p_first about-us__p">
-                Fusce dapibus, tellus ac cursus commodo,
-                 tortor mauris condimentum. Duis mollis, non commodo 
-                 luctus, nisi erat porttitor ligula, eget lacinia odio 
-                 sem nec elit. Fusce dapibus, tellus ac cursur commodo, 
-                 tortor mauris condimentum nibh.
+                Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo 
+                luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursur commodo, 
+                tortor mauris condimentum nibh.
             </p>
             <div class="about-us__friends">
                 <div class="about-us__friend">
@@ -197,8 +202,7 @@
                     </div>                    
                     <h3 class="about-us__friend__h3">Adam Jensen</h3>
                     <p class="p_second about-us__friend__p">
-                        Quisque luctus, quam eget molestie commodo, 
-                        lacus purus cursus purus, nec rutrum tellus 
+                        Quisque luctus, quam eget molestie commodo, lacus purus cursus purus, nec rutrum tellus 
                         dolor id lorem.
                     </p>                   
                     <div class="icon about-us__icon">
@@ -214,8 +218,7 @@
                     </div>                    
                     <h3 class="about-us__friend__h3">Desmond Miles</h3>
                     <p class="p_second about-us__friend__p">
-                        Curabitur vestibulum eget mauris quis laoreet.
-                        Phasellus in quam laoreet, viverra lacus ut,
+                        Curabitur vestibulum eget mauris quis laoreet. Phasellus in quam laoreet, viverra lacus ut,
                         ultrices velit.
                     </p>                        
                     <div class="about-us__icon">
@@ -249,7 +252,7 @@
     <!--singolo2 END-->
     
     <!--singolo3 START-->
-    <section class="get-a-quote">
+    <section class="get-a-quote" id="get-a-quote">
         <div class="wrapper get-a-quote__wrapper">
             <h2 class="get-a-quote__h2">Get a Quote</h2>
             <p class="p_first get-a-quote__p">
@@ -295,7 +298,6 @@
         <div class="wrapper footer__wrapper">
             <a class="footer__copyright" href="#">
                 © Copyright 2013 · by PSDchat.com
-            <!--img src="assets/svg/© Copyright 2013 · by PSDchat.com.svg" alt=""-->
             </a>
             <div class="footer__icon">
                 <a class="icon__facebook" href="#"></a>
@@ -305,6 +307,7 @@
             </div>
         </div>
     </footer>  
+    <script src="script.js"></script>
     <!--singolo3 end-->  
 </body>
 </html>
