@@ -369,7 +369,7 @@ header{
     color: #767e9e;
     border: 1px solid #767e9e;
 }
-.portfolio__link_color{
+li:nth-child(1) > a{
     padding: 3px 7px 3px 7px;
 }
 .portfolio__link_color,
@@ -383,19 +383,26 @@ header{
     width: 58.75rem;
     height: 37.5625rem;
     justify-content: space-between;
-    overflow:hidden;
+    overflow: hidden;
     margin-top: 1.375rem;
 }
+
 .portfolio__image{
     width: 13.75rem;
     height: 11.6874rem;
     margin-bottom: 1.25rem;
     overflow:hidden;
 }
+#portfolio__image_activ{
+    width: 210px;
+    height: 177px;
+    border: #F06C64 solid 5px;
+}
 .portfolio__image img{
+   
     position: relative;
 }
-.portfolio__image_c1{
+/*.portfolio__image_c1{
     top: -10px;
     left: -8px; 
 }
@@ -442,7 +449,7 @@ header{
 .portfolio__image_c12{
     top: -60px;
     left: -35px;
-}
+}*/
 .portfolio__bottom{
     background: #323746;
 }
@@ -531,6 +538,24 @@ margin-top: 1.4375rem;
     flex-basis: 100%;
     margin-bottom: 2.7rem;
 }
+.get-a-quote__message{
+    position: relative;
+    width: 100vw;
+    height: 100vw;
+    top: 0;
+    left: 0;
+    background: #0008;
+}
+.get-a-quote__message_h{
+    display: none;
+}
+#message{
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    border: teal solid 2px;
+}
+
 .get-a-quote__form{
     display: flex;
     flex-basis: 38.75rem;
@@ -573,6 +598,11 @@ margin-top: 1.4375rem;
     text-align: center;
     height: 2.4rem;
     background-color: #ac413c;
+}
+.get-a-quote__form__button:hover{
+    border: #c04b45;
+    background-color: #8d3834;
+    cursor: pointer;
 }
 .get-a-quote__contact{
     flex-basis: 18.75rem;

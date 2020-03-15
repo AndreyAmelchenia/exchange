@@ -113,4 +113,82 @@ dis_hor.addEventListener(('click'),
 )
    
 
+let port = document.querySelectorAll(".portfolio__image");
+let port_list = document.querySelector('.portfolio__list');
+let port_link = document.querySelector('.portfolio__list').querySelectorAll('a');
+let port_imgs = document.querySelector('.portfolio__images').querySelectorAll('img');
 
+port_link.forEach( el => el.addEventListener('click', (event) =>  {
+    const port_arr = [];
+    port.forEach(el => el.style.order = '')
+    port_imgs.forEach((el) => {port_arr.push(el.className.split('').splice(18).join(''));
+        for(let i=0; i< port_arr.length; i++){
+            port[i].id = port_arr[i];
+        }
+        })
+    console.log(port_arr);
+    port_link.forEach(el => el.classList.remove('portfolio__link_color'));
+    event.target.classList.add('portfolio__link_color');
+   // let activ_link = port_list.querySelector('.portfolio__link_color')
+    switch(event.target){
+        case port_link[0]:
+            port.forEach(
+                (item)=>{
+                    item.style.order = item.id;
+            })
+            break;
+        case port_link[1]:
+           port_arr.sort((a, b) => a - b ).reverse();
+           for (let i = 0 ; i < port_arr.length; i++){
+               port[i].style.order = port_arr[i];
+           }
+            
+            break;
+            case port_link[2]:
+                let p_3 =  port_arr.splice(4,4);
+                console.log(p_3);
+                console.log(port_arr);
+                port.forEach(
+                    (item) => {
+                        for (let i=0 ; i<p_3.length; i++){
+                        if(item.id === p_3[i] )
+                        {
+                            item.style.order = '-1';
+                        }
+                        }
+                    }
+                )
+            break;
+            case port_link[3]:
+                let p_4 =  port_arr.splice(4);
+                console.log(p_4);
+                console.log(port_arr);
+                port.forEach(
+                    (item) => {
+                        for (let i=0 ; i<p_4.length; i++){
+                        if(item.id === p_4[i] )
+                        {
+                            item.style.order = '-1';
+                        }
+                        }
+                    }
+                )
+            break;
+    }
+    
+})
+)
+
+
+let port_img = document.querySelector('.portfolio__images');
+
+port_imgs.forEach((el) => {
+    el.addEventListener('click', (event) =>  {
+        port_imgs.forEach(el => el.id = '');
+        event.target.id='portfolio__image_activ';
+    } )
+} )
+
+
+// нахождения номера кортинки
+//document.querySelector('.portfolio__images').querySelectorAll('img')[11].className.split('').splice(18).join('')
