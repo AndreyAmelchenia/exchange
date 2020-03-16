@@ -189,6 +189,130 @@ port_imgs.forEach((el) => {
     } )
 } )
 
+class Content {
+    constructor(name, email, subject, cont_text){
+        this.name = name;
+        this.email =email;
+        this.subject = subject;
+        this.cont_text = cont_text;
+    }
 
-// нахождения номера кортинки
-//document.querySelector('.portfolio__images').querySelectorAll('img')[11].className.split('').splice(18).join('')
+    generateContent(){
+        let template = `<h2>The letter was sent</h2>`;
+        let cont = document.createElement('div');
+        cont.classList = '';
+        template += `<h2>Name: ${this.name}</h2>`
+        template += `<p class = "p_first" >email: ${email}</p>`
+        if (this.subject){
+            template += `<p class = "p_first" >Subject: ${this.subject}.</p>`
+        } else {
+            template += `<p class = "p_first" >Without subject.</p>`
+        }
+        if (this.cont_text){
+            template += `<p class = "p_first" >Subject: ${this.cont_text}.</p>` 
+        } else {
+            template += `<p class = "p_first" >Without description.</p>`
+        }
+        console.log(template)
+        return template;
+
+    }
+}
+
+
+
+
+
+
+
+class Modal {
+    constructor(classes){
+        this.classes = classes;
+        this.modal = '';
+        this.modalContent = '';
+        this.modalBtn = '';
+        this.overlay = '';
+    }
+    buildModal(content)  {
+        this.overlay = this.createNode(this.overlay, 'div',this.classes);
+        this.modal = this.createNode(this.modal, 'div','get-a-quote__modal');
+        this.modalContent =this.createNode(this.modalContent, 'p','p_first');
+        this.modalBtn = this.createNode(this.modalBtn, 'button', 'get-a-quote__form__button');
+        this.modalBtn.innerHTML = 'Ok';
+        this.setContent(content);
+        this.appendElem();
+        this.bindEven();
+        this.openModal();  
+    }
+    createNode (node, elem, ...classes){
+        node = document.createElement(elem);
+        node.classList.add(...classes);
+        return node;
+    }
+    setContent(content){
+        if(typeof content === 'string'){
+            this.modalContent.innerHTML = content;
+        } else{
+            this.modalContent.innerHTML = '';
+            this.modalContent.appendChild(content);
+        }
+    }
+    appendElem(){
+        this.modal.append(this.modalContent);
+        this.modal.append(this.modalBtn);
+        this.overlay.append(this.modal);
+    }
+
+    bindEven(){
+        this.modalBtn.addEventListener('click',(event) =>{
+            let classEvent = event.target.classList;
+            if(classEvent.contains(this.modalBtn.classList) ){
+            
+            let name = `.${this.overlay.className}`
+            document.querySelector(name).remove();
+           }
+        });
+      /*  this.overlay.addEventListener('click',(event) =>{
+            let classEvent = event.target.classList;
+            if( classEvent.contains(this.overlay.classList)){
+            
+            let name = `.${this.overlay.className}`
+            document.querySelector(name).remove();
+           }
+        });*/
+    }
+    openModal(){
+        document.body.append(this.overlay);
+    } 
+}
+
+
+
+
+window.onload = function() {
+    addClick();
+}
+
+const addClick = () =>{
+    document.querySelector('.get-a-quote__form__button').addEventListener('click', () =>{
+        generateModal();
+    })
+}
+ 
+const generateModal = () => {
+    let name = document.querySelector(".get-a-quote__form > input:nth-child(1)").value;
+    let email = document.querySelector(".get-a-quote__form > input:nth-child(2)").value;
+    let subject = document.querySelector(".get-a-quote__form > input:nth-child(3)").value;
+    let cont_text = document.querySelector(".get-a-quote__form__detail").innerText;
+    console.log(name);
+    if(name && (email.indexOf('@') > 0)){
+       let content = new Content(name, email, subject, cont_text);
+       content.generateContent;
+       console.log(content.generateContent);
+    }
+}
+const renderModal = (content) =>{
+    let modal = new Modal('get-a-quote__overlay');
+    modal.buildModal(content);
+
+}

@@ -538,21 +538,26 @@ margin-top: 1.4375rem;
     flex-basis: 100%;
     margin-bottom: 2.7rem;
 }
-.get-a-quote__message{
-    position: relative;
+.get-a-quote__overlay{
+    position: fixed;
     width: 100vw;
-    height: 100vw;
+    height: 100vh;
     top: 0;
     left: 0;
     background: #0008;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.get-a-quote__message_h{
+.get-a-quote__overlay_h{
     display: none;
 }
-#message{
-    position: absolute;
-    width: 50%;
+.get-a-quote__modal{
+    position: relative;
+    border-radius: 5px;
+    width: 625px;
     height: 50%;
+    background:#f06c64;
     border: teal solid 2px;
 }
 
