@@ -98,38 +98,43 @@ const portTagsListClass = 'portfolio__link';
 const portTagsList = document.querySelectorAll('.portfolio__link');
 const portTagsListClassMod = 'portfolio__link_color';
 
-const port_arr = [];
-
+//sort
+let port_arr = [];
+const portImgList = document.querySelectorAll('.portfolio__image');
 
 window.onload = function() {
-
+    addElementScroll(headerList, headerListClassMod);
     addClick();
 
     addElemClickHandler(header, headerListClass, headerList, headerListClassMod);
     addElemClickHandler(portTags, portTagsListClass, portTagsList, portTagsListClassMod);
     elemScrollHandler(header);
+    elemScrollHandler(portTags);
     addImgPortDataId();
-    
+    addElemClickHandlerSort(portTags, portTagsListClass, portTagsList)
 }
 
 
 
-let left = -20;
-let right = 0;
-let left_arr = [0,900];
-let poz_left = left;
-let poz_right = right;
-const color = ['#648BF0','#f06c64'];
+//scroll
+const addElementScroll = (elemList, elemClassMod) => {
+    document.addEventListener('scroll', eventScroll(elemList, elemClassMod))
+}
 
-const slider_first = document.querySelector('.slider-block__slider__first');
-const slider_second = document.querySelector('.slider-block__slider__second');
-const chek_right = document.querySelector("body > section.slider-block > div > div:nth-child(3) > a");
-
-let back_start = document.querySelector("body > section.slider-block");
-//back_start.style.background = "linear-gradient(90deg, #323746 0%, #f06c64 0%)";
-let back = document.querySelectorAll("body > section.slider-block");
-
-const chek_left = document.querySelector("body > section.slider-block > div > div:nth-child(1) > a");
+const eventScroll = (elemList, elemClassMod) => {
+    const poz = window.scrollY
+    const sections = document.querySelectorAll('section');
+    sections.forEach(el => {
+        if(el.offsetTop <= poz && (el.offsetTop + el.offsetHeight) > poz ){
+            document.querySelectorAll('.header__list').forEach(tag => {
+                tag.classList.remove(elemClassMod);
+                if(el.getAttribute('id') === tag.getAttribute('href').substr(1)){
+                    tag.classList.add(elemClassMod);
+                }
+            })
+        }
+    })
+} 
 
 //смена цвета элементов при нажатии
 const addElemClickHandler = (elem, elemClass, elemList, elemClassMod) => {
@@ -145,20 +150,36 @@ const addElemClickHandler = (elem, elemClass, elemList, elemClassMod) => {
 
 // плавный переход по якорям
 const elemScrollHandler = (elemList) => {
-    for (let scroll of elemList.querySelectorAll('a')) {
-        scroll.addEventListener('click', (event) => {
+    elemList.querySelectorAll('a').forEach((elem)=>{
+        elem.addEventListener('click', (event) => {
             event.preventDefault()
-            const sectionID = scroll.getAttribute('href').substr(1)
-            document.getElementById(sectionID).scrollIntoView({
+            const sectionID = elem.getAttribute('href')
+            document.querySelector(sectionID).scrollIntoView({
                 behavior: 'smooth',
                 block: 'start'
             })
         })
-    }
+    }) 
+        
+   
 }
 
 
+let left = -20;
+let right = 0;
+let left_arr = [0,900];
+let poz_left = left;
+let poz_right = right;
+const color = ['#648BF0','#f06c64'];
 
+const slider_first = document.querySelector('.slider-block__slider__first');
+const slider_second = document.querySelector('.slider-block__slider__second');
+const chek_right = document.querySelector("body > section.slider-block > div > div:nth-child(3) > a");
+
+let back_start = document.querySelector("body > section.slider-block");
+let back = document.querySelectorAll("body > section.slider-block");
+
+const chek_left = document.querySelector("body > section.slider-block > div > div:nth-child(1) > a");
 
 // SLIDER
 chek_left.addEventListener('click', (() => {
@@ -212,25 +233,8 @@ chek_right.addEventListener('click',
 
     })
 )
-//article.setAttribute('data-id', this.id);
+
 //DISPLAY
-
-const addImgPortDataId = () => {
-    const PortImgList = document.querySelectorAll('.portfolio__image');
-    let i = 1; 
-    PortImgList.forEach((elem) => {
-        elem.setAttribute('data-id', i);
-        port_arr.push(i);
-        i++
-    })
-    return port_arr;
-}
-
-
-console.log(port_arr);
-
-
-
 
 let dis_vert = document.querySelector('.slider-block__vertical');
 dis_vert.addEventListener(('click'),
@@ -254,11 +258,75 @@ dis_hor.addEventListener(('click'),
     }
     })
 )
-   
+ 
+const addImgPortDataId = () => {
+    let i = 1; 
+    portImgList.forEach(elem => {elem.setAttribute('data-id', i); i++})
+}
+
+const addElemClickHandlerSort = (elem, elemClass, arr) => {
+    elem.addEventListener('click', (event) => {
+        if (event.target.classList.contains(elemClass)) {
+            port_arr = [];
+            portImgList.forEach(elem => elem.style.order = '');
+            portImgList.forEach(elem => port_arr.push(elem.dataset['id']));
+            switch(event.target){
+                case arr[0]:
+                    portImgList.forEach(
+                        (item)=>{
+                            item.style.order = item.dataset["id"];
+                    })
+                    
+                break;
+                case arr[1]:
+                    port_arr.sort((a, b) => a - b ).reverse();
+                    for (let i = 0 ; i < port_arr.length; i++){
+                        portImgList[i].style.order = port_arr[i];
+                    }
+                
+                break;
+                case arr[2]:
+                    console.log(port_arr);
+                    p_3 = port_arr.splice(4,4);
+                    console.log(p_3);
+                    portImgList.forEach((item) => {
+                        for (let i=0 ; i<p_3.length; i++){
+                            if(item.dataset["id"] === p_3[i]){
+                                item.style.order = '-1';
+                            }
+                        }
+                    })
+                    
+                break;
+                case arr[3]:
+                    let p_4 =  port_arr.splice(4);
+                    portImgList.forEach((item) => {
+                        for (let i=0 ; i<p_4.length; i++){
+                            if(item.dataset["id"] === p_4[i] ){
+                                item.style.order = '-1';
+                            }
+                        }
+                    })
+                    
+                break;
+            }
+        }
+    })
+}
+
+let port_img = document.querySelector('.portfolio__images');
+let port_imgs = document.querySelector('.portfolio__images').querySelectorAll('img');
+port_imgs.forEach((el) => {
+    el.addEventListener('click', (event) =>  {
+        port_imgs.forEach(el => el.id = '');
+        event.target.id='portfolio__image_activ';
+    } )
+} )
+//let port_link = document.querySelector('.portfolio__list').querySelectorAll('a');
 /*
 let port = document.querySelectorAll(".portfolio__image");
 let port_list = document.querySelector('.portfolio__list');
-let port_link = document.querySelector('.portfolio__list').querySelectorAll('a');
+
 let port_imgs = document.querySelector('.portfolio__images').querySelectorAll('img');
 
 port_link.forEach( el => el.addEventListener('click', (event) =>  {
@@ -329,7 +397,8 @@ port_imgs.forEach((el) => {
 */
 
 const addClick = () =>{
-    document.querySelector('.get-a-quote__form__button').addEventListener('click', () =>{
+    document.querySelector('.get-a-quote__form__button').addEventListener('click', (event) =>{
+        event.preventDefault();
         generateModal();
     })
 }

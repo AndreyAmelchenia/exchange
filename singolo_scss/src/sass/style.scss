@@ -120,11 +120,18 @@ p{
 .icon__linkedin:hover{
     background: url(../../assets/svg/icon__linkedin_color.svg);
 }
+body{
+    width: 63.75rem;
+    margin: auto;
+    overflow: scroll;
+  }
 header{
+    position: fixed;
     width: 63.75rem;
     height: 5.5625rem;
     background: #2d303a;
     margin: auto;
+    z-index: 5;
 }
 .header__wrapper{
     justify-content: space-between;
@@ -161,6 +168,7 @@ header{
     color: #f06c64;
 }
 .header__bottom{
+    height: 5.9375rem;
     background: #323746;
 }
 .slider-block{
