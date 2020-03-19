@@ -87,54 +87,69 @@ class Modal {
         document.body.append(this.overlay);
     } 
 }
+
+
 //headerList
 const header = document.querySelector('.header__list');
 const headerListClass = 'header__list__item';
 const headerList = document.querySelectorAll('.header__list__item');
+const headerLinks = document.querySelectorAll('.header__list a');
 const headerListClassMod = 'header__list__item_mod';
+const bottomSize = 'bottom_size';
 //portTagsList
 const portTags = document.querySelector('.portfolio__list');
 const portTagsListClass = 'portfolio__link';
 const portTagsList = document.querySelectorAll('.portfolio__link');
 const portTagsListClassMod = 'portfolio__link_color';
 
-//sort
+
+
 let port_arr = [];
 const portImgList = document.querySelectorAll('.portfolio__image');
 
-window.onload = function() {
-    addElementScroll(headerList, headerListClassMod);
-    addClick();
 
+
+const sections = document.querySelectorAll('section');
+
+
+window.onload = function() {
+    addElementScroll(headerList, headerLinks, headerListClassMod);
+    addClick();
+    addImgPortDataId();
     addElemClickHandler(header, headerListClass, headerList, headerListClassMod);
     addElemClickHandler(portTags, portTagsListClass, portTagsList, portTagsListClassMod);
     elemScrollHandler(header);
     elemScrollHandler(portTags);
-    addImgPortDataId();
+    
     addElemClickHandlerSort(portTags, portTagsListClass, portTagsList)
 }
 
 
 
 //scroll
-const addElementScroll = (elemList, elemClassMod) => {
-    document.addEventListener('scroll', eventScroll(elemList, elemClassMod))
-}
-
-const eventScroll = (elemList, elemClassMod) => {
-    const poz = window.scrollY
-    const sections = document.querySelectorAll('section');
-    sections.forEach(el => {
-        if(el.offsetTop <= poz && (el.offsetTop + el.offsetHeight) > poz ){
-            document.querySelectorAll('.header__list').forEach(tag => {
-                tag.classList.remove(elemClassMod);
-                if(el.getAttribute('id') === tag.getAttribute('href').substr(1)){
-                    tag.classList.add(elemClassMod);
+const addElementScroll = (elemList, elemLink, elemClassMod) => {
+    document.addEventListener('scroll', () => {
+        let poz = window.scrollY;
+        sections.forEach(el => {
+            if(el.offsetTop <= poz && (el.offsetTop + el.offsetHeight) > poz ){
+                for (let i = 0; i < elemList.length; i++ ){
+                    if (elemLink[i].getAttribute('href') === ('#'+el.getAttribute('id'))){
+                        elemList.forEach(tag => {
+                            tag.classList.remove(elemClassMod);
+                        })
+                        elemList[i].classList.add(elemClassMod);
+                        //el.classList.add(elemClassSize);
+                        
+                    } 
                 }
-            })
-        }
+            // } else {
+                
+            //     el.classList.remove(elemClassSize);
+                
+            }
+        })
     })
-} 
+}
 
 //смена цвета элементов при нажатии
 const addElemClickHandler = (elem, elemClass, elemList, elemClassMod) => {
@@ -148,7 +163,7 @@ const addElemClickHandler = (elem, elemClass, elemList, elemClassMod) => {
     })
 }
 
-// плавный переход по якорям
+//плавный переход по якорям
 const elemScrollHandler = (elemList) => {
     elemList.querySelectorAll('a').forEach((elem)=>{
         elem.addEventListener('click', (event) => {
@@ -164,101 +179,94 @@ const elemScrollHandler = (elemList) => {
    
 }
 
-
+// SLIDER (!исправить, если будет время)
 let left = -20;
 let right = 0;
 let left_arr = [0,900];
 let poz_left = left;
 let poz_right = right;
 const color = ['#648BF0','#f06c64'];
-
 const slider_first = document.querySelector('.slider-block__slider__first');
 const slider_second = document.querySelector('.slider-block__slider__second');
 const chek_right = document.querySelector("body > section.slider-block > div > div:nth-child(3) > a");
-
 let back_start = document.querySelector("body > section.slider-block");
 let back = document.querySelectorAll("body > section.slider-block");
-
 const chek_left = document.querySelector("body > section.slider-block > div > div:nth-child(1) > a");
-
-// SLIDER
-chek_left.addEventListener('click', (() => {
+chek_left.addEventListener('click', () => {
     let l1 = -left_arr[0];
     let l2 = left_arr[0]-1800;
-    let interval = setInterval(() =>
-    back.forEach((item) =>{
-        let deg = 90;
-        item.style.background = `linear-gradient(${deg}deg, ${color[0]} ${poz_left}%, ${color[1]} ${poz_right}%)`;
-        slider_first.style.left = `${l1}px`;
-        slider_second.style.left = `${l2}px`;
-        if (poz_left === 100){
-            left_arr = left_arr.reverse();
-            color.reverse();
-            poz_left = left;
-            poz_right = right;
-            clearInterval(interval);
-            return ;
-        }
-        l2= l2+900/240;
-        l1= l1+900/240;
-        poz_right+=0.5  ;
-        poz_left+=0.5;
-    })
-    , 3)
-}))
-chek_right.addEventListener('click', 
-    (() => {
-        let l1 = left_arr[0];
-        let l2 = -left_arr[0];
-        let interval = setInterval(() => { 
-            back.forEach((item) =>{
-                let deg = -90;
-                item.style.background = `linear-gradient(${deg}deg, ${color[0]} ${poz_left}%, ${color[1]} ${poz_right}%)`;
-                slider_first.style.left = `${l1}px`;
-                slider_second.style.left = `${l2}px`;
-                if (poz_left === 100){
-                    left_arr = left_arr.reverse();
-                    color.reverse();
-                    poz_left = left;
-                    poz_right = right;
-                    clearInterval(interval);
-                    return ;
-                }
-                l2= l2-900/240;
-                l1= l1-900/240;
-                poz_right+=0.5  ;
-                poz_left+=0.5;
-            })
-        }, 3)
+    let interval = setInterval(() => {
+        back.forEach((item) =>{
+            let deg = 90;
+            item.style.background = `linear-gradient(${deg}deg, ${color[0]} ${poz_left}%, ${color[1]} ${poz_right}%)`;
+            slider_first.style.left = `${l1}px`;
+            slider_second.style.left = `${l2}px`;
+            if (poz_left === 100){
+                left_arr = left_arr.reverse();
+                color.reverse();
+                poz_left = left;
+                poz_right = right;
+                clearInterval(interval);
+                return ;
+            }
+            l2= l2+900/240;
+            l1= l1+900/240;
+            poz_right+=0.5  ;
+            poz_left+=0.5;
+        })
+    }, 3)
+})
 
-    })
-)
-
-//DISPLAY
-
+chek_right.addEventListener('click', () => {
+    let l1 = left_arr[0];
+    let l2 = -left_arr[0];
+    let interval = setInterval(() => { 
+        back.forEach((item) =>{
+            let deg = -90;
+            item.style.background = `linear-gradient(${deg}deg, ${color[0]} ${poz_left}%, ${color[1]} ${poz_right}%)`;
+            slider_first.style.left = `${l1}px`;
+            slider_second.style.left = `${l2}px`;
+            if (poz_left === 100){
+                left_arr = left_arr.reverse();
+                color.reverse();
+                poz_left = left;
+                poz_right = right;
+                clearInterval(interval);
+                return ;
+            }
+            l2= l2-900/240;
+            l1= l1-900/240;
+            poz_right+=0.5  ;
+            poz_left+=0.5;
+        })
+    }, 3)
+})
+//DISPLAY none
 let dis_vert = document.querySelector('.slider-block__vertical');
-dis_vert.addEventListener(('click'),
-    (() => {
-        if(document.querySelector('.slider-block__vertical__body img').style.display === "none" ){
-            document.querySelector('.slider-block__vertical__body img').style.display = '';
-        }
-        else{ 
-            document.querySelector('.slider-block__vertical__body img').style.display = 'none'
+dis_vert.addEventListener(('click'), () => {
+    if(document.querySelector('.slider-block__vertical__body img').style.display === "none" ){
+        document.querySelector('.slider-block__vertical__body img').style.display = '';
     }
-    })
-)
+    else{ 
+        document.querySelector('.slider-block__vertical__body img').style.display = 'none'
+    }
+})
+
 let dis_hor = document.querySelector('.slider-block__horizontal');
-dis_hor.addEventListener(('click'),
-    (() => {
-        if(document.querySelector('.slider-block__horizontal__body img').style.display === "none" ){
-            document.querySelector('.slider-block__horizontal__body img').style.display = '';
-        }
-        else{ 
-            document.querySelector('.slider-block__horizontal__body img').style.display = 'none'
+dis_hor.addEventListener(('click'), () => {
+    if(document.querySelector('.slider-block__horizontal__body img').style.display === "none" ){
+        document.querySelector('.slider-block__horizontal__body img').style.display = '';
     }
-    })
-)
- 
+    else{ 
+        document.querySelector('.slider-block__horizontal__body img').style.display = 'none'
+    }
+})
+
+
+//sort
+
+
+
 const addImgPortDataId = () => {
     let i = 1; 
     portImgList.forEach(elem => {elem.setAttribute('data-id', i); i++})
@@ -275,20 +283,16 @@ const addElemClickHandlerSort = (elem, elemClass, arr) => {
                     portImgList.forEach(
                         (item)=>{
                             item.style.order = item.dataset["id"];
-                    })
-                    
+                    }) 
                 break;
                 case arr[1]:
                     port_arr.sort((a, b) => a - b ).reverse();
                     for (let i = 0 ; i < port_arr.length; i++){
                         portImgList[i].style.order = port_arr[i];
                     }
-                
                 break;
                 case arr[2]:
-                    console.log(port_arr);
                     p_3 = port_arr.splice(4,4);
-                    console.log(p_3);
                     portImgList.forEach((item) => {
                         for (let i=0 ; i<p_3.length; i++){
                             if(item.dataset["id"] === p_3[i]){
@@ -296,7 +300,6 @@ const addElemClickHandlerSort = (elem, elemClass, arr) => {
                             }
                         }
                     })
-                    
                 break;
                 case arr[3]:
                     let p_4 =  port_arr.splice(4);
@@ -306,14 +309,13 @@ const addElemClickHandlerSort = (elem, elemClass, arr) => {
                                 item.style.order = '-1';
                             }
                         }
-                    })
-                    
+                    })   
                 break;
             }
         }
     })
 }
-
+// activ Img
 let port_img = document.querySelector('.portfolio__images');
 let port_imgs = document.querySelector('.portfolio__images').querySelectorAll('img');
 port_imgs.forEach((el) => {
@@ -322,79 +324,6 @@ port_imgs.forEach((el) => {
         event.target.id='portfolio__image_activ';
     } )
 } )
-//let port_link = document.querySelector('.portfolio__list').querySelectorAll('a');
-/*
-let port = document.querySelectorAll(".portfolio__image");
-let port_list = document.querySelector('.portfolio__list');
-
-let port_imgs = document.querySelector('.portfolio__images').querySelectorAll('img');
-
-port_link.forEach( el => el.addEventListener('click', (event) =>  {
-    const port_arr = [];
-    port.forEach(el => el.style.order = '')
-    port_imgs.forEach((el) => {port_arr.push(el.className.split('').splice(18).join(''));
-        for(let i=0; i< port_arr.length; i++){
-            port[i].id = port_arr[i];
-        }
-        })
-    port_link.forEach(el => el.classList.remove('portfolio__link_color'));
-    event.target.classList.add('portfolio__link_color');
-    switch(event.target){
-        case port_link[0]:
-            port.forEach(
-                (item)=>{
-                    item.style.order = item.id;
-            })
-            break;
-        case port_link[1]:
-           port_arr.sort((a, b) => a - b ).reverse();
-           for (let i = 0 ; i < port_arr.length; i++){
-               port[i].style.order = port_arr[i];
-           }
-            
-            break;
-            case port_link[2]:
-                let p_3 =  port_arr.splice(4,4);
-                port.forEach(
-                    (item) => {
-                        for (let i=0 ; i<p_3.length; i++){
-                        if(item.id === p_3[i] )
-                        {
-                            item.style.order = '-1';
-                        }
-                        }
-                    }
-                )
-            break;
-            case port_link[3]:
-                let p_4 =  port_arr.splice(4);
-                port.forEach(
-                    (item) => {
-                        for (let i=0 ; i<p_4.length; i++){
-                        if(item.id === p_4[i] )
-                        {
-                            item.style.order = '-1';
-                        }
-                        }
-                    }
-                )
-            break;
-    }
-    
-})
-)
-
-
-let port_img = document.querySelector('.portfolio__images');
-
-port_imgs.forEach((el) => {
-    el.addEventListener('click', (event) =>  {
-        port_imgs.forEach(el => el.id = '');
-        event.target.id='portfolio__image_activ';
-    } )
-} )
-
-*/
 
 const addClick = () =>{
     document.querySelector('.get-a-quote__form__button').addEventListener('click', (event) =>{

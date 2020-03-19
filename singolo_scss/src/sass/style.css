@@ -94,6 +94,10 @@ p {
   margin: auto;
 }
 
+.bottom_size {
+  height: 5.9375rem;
+}
+
 .icon__facebook {
   display: block;
   width: 2.1875rem;
@@ -138,10 +142,9 @@ p {
   background: url(../../assets/svg/icon__linkedin_color.svg);
 }
 
-body {
+body, html {
   width: 63.75rem;
   margin: auto;
-  overflow: scroll;
 }
 
 header {
