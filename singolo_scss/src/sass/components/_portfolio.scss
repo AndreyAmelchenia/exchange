@@ -1,0 +1,115 @@
+.portfolio{
+    width: 63.75rem;
+    height: 53.9375rem;
+    margin: auto;
+    background: #2d303a;
+}
+
+.portfolio__h2{
+    margin-top: 3.6875rem;
+    color: #666d89;
+    letter-spacing: -0.015rem;
+}
+.portfolio__p{
+    margin-top: 1.125rem;
+    color: #767e9e;
+    margin-bottom: 0.6875rem;
+}
+.portfolio__list{
+    display: flex;
+    justify-content: space-between;
+    width: 18rem;
+}
+.portfolio__item{
+    list-style-type: none;
+}
+.portfolio__link{
+    border-radius: 5px;
+    padding: 3px 5px 3px 6px;
+    color: #767e9e;
+    border: 1px solid #767e9e;
+}
+li:nth-child(1) > a{
+    padding: 3px 7px 3px 7px;
+}
+.portfolio__link_color,
+.portfolio__link:hover{
+    color: #ffffff;
+    border: 1px solid #ffffff;
+}
+.portfolio__images{
+    display: flex;
+    flex-wrap: wrap;
+    width: 58.75rem;
+    height: 37.5625rem;
+    justify-content: space-between;
+    overflow: hidden;
+    margin-top: 1.375rem;
+}
+
+.portfolio__image{
+    width: 13.75rem;
+    height: 11.6874rem;
+    margin-bottom: 1.25rem;
+    overflow:hidden;
+}
+#portfolio__image_activ{
+    width: 210px;
+    height: 177px;
+    border: #F06C64 solid 5px;
+}
+.portfolio__image img{
+   
+    position: relative;
+}
+.portfolio__bottom{
+    background: #323746;
+}
+// /*.portfolio__image_c1{
+//     top: -10px;
+//     left: -8px; 
+// }
+// .portfolio__image_c2{
+//     top: -43px;
+//     left: -81px;
+// }
+// .portfolio__image_c3{
+//     top: -1px;
+//     left: -11px;
+// }
+// .portfolio__image_c4{
+//     top: -2px;
+//     left: -24px;
+// }
+// .portfolio__image_c5{
+//     top: -16px;
+//     left: -11px;
+// }
+// .portfolio__image_c6{
+//     top: -5px;
+//     left: -16px;
+// }
+// .portfolio__image_c7{
+//     top: -39px;
+//     left: -31px;
+// }
+// .portfolio__image_c8{
+//     top: -32px;
+//     left: -24px;
+// }
+// .portfolio__image_c9{
+//     top: -3px;
+//     left: -16px;
+// }
+// .portfolio__image_c10{
+//     top: -113px;
+//     left: -141px;
+// }
+// .portfolio__image_c11{
+//     top: -175px;
+//     left: -144px;
+// }
+// .portfolio__image_c12{
+//     top: -60px;
+//     left: -35px;
+// }*/

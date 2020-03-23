@@ -1,0 +1,127 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato';
+}
+
+body, html{
+    width: 63.75rem;
+    margin: auto;
+  }
+
+a{
+    text-decoration: none;
+    font-size: 0.75rem;
+}
+
+h2, h3{
+    font-weight: 900; 
+}
+
+h1{
+    font-weight: 700;
+    font-size: 1.5625rem;
+    text-align: left;
+}
+
+h2{
+    font-size: 1.875rem;
+}
+.h2{
+    font-size: 1.875rem;
+    &_our-service{
+        letter-spacing: -0.01rem;
+        margin-top: 3.6875rem;
+        color: $color-our-service__h;
+    }
+}
+h3{
+    font-size: 1.125rem;
+}
+.h3{
+    font-size: 1.125rem;
+    &_our-service{
+        margin-top: -0.1875rem;
+        color: $color-our-service__h;
+        margin-bottom: 0.5rem;
+        letter-spacing: -0.005rem;
+    }
+}
+
+.p{
+    &_first{
+        text-align: justify;
+        font-size: 1.125rem;
+        line-height: 1.875rem;
+        font-weight: 300;
+    }
+    &_second{
+        text-align: justify;
+        font-size: 0.75rem;
+        line-height: 1.375rem;
+    }
+    &_our-service{
+        margin-top: 1.125rem;
+        margin-bottom: 2.875rem;
+        color: $color-our-service__p;
+        &_layout{
+            color: $color-our-service__p;
+ 
+        }
+    }
+}
+
+
+// .p_second{
+//     font-size: 0.75rem;
+//     line-height: 1.375rem;
+//     font-weight: 400;
+// }
+
+
+// html {
+//     font-size: 10px;
+// }
+
+// body {
+//     @extend %font-prim;
+//     @include font($size: 1.6rem, $height: 2.6rem, $weight: normal);
+// }
+
+// h1 {
+//     @extend %font-add;
+//     @include font($height: 5.4rem, $size: 4.4rem);
+//     @include media-mobile {
+//         @include font($height: 4.2rem, $size: 3.2rem);
+//     }
+// }
+
+// h2 {
+//     @include font($size: 3.4rem, $height: 4.6rem);
+//     @include media-mobile {
+//         @include font($height: 3.3rem, $size: 2.4rem);
+//     }
+// }
+
+// h3 {
+//     @include font($size: 2.4rem, $height: 3.4rem);
+//     @include media-mobile {
+//         @include font($height: 3.1rem, $size: 2.1rem);
+//     }
+// }
+
+// h4 {
+//     @include font($size: 2.2rem, $height: 3.0rem, $weight: 600);
+//     @include media-tablet {
+//         @include font($height: 3.0rem, $size: 2.0rem);
+//     }
+// }
+
+// h5 {
+//     @include font($size: 1.6rem, $height: 2.6rem);
+// }
+
+// .block-shadowed {
+//     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+//     border-radius: 10px;
+// }

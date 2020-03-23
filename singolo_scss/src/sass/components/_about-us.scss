@@ -1,0 +1,115 @@
+.about-us{
+    width: 63.75rem;
+    height: 45.5rem;
+    margin: auto;
+    background: #f2f2f2;
+}
+.about-us__wrapper{
+    flex-flow: column;
+    align-content: flex-start;
+}
+.about-us__h2{
+    margin-top: 3.6875rem;
+    color: #666d89;
+    letter-spacing: -0.015rem;
+}
+.about-us__p{
+    margin-top: 1.125rem;
+    color: #767e9e;
+    margin-bottom: 2.8rem;
+}
+.about-us__friends{
+ display: flex;
+ justify-content: space-between;
+}
+.about-us__friend{
+    width: 18.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+.about-us__friend__photo{
+    width: 18.75rem;
+    height:18.75rem;;
+    overflow:hidden;
+}
+.about-us__friend__photo img{
+    position: relative;
+}
+.about-us__friend__h3{
+    margin-top: 0.94rem;
+    margin-left: -0.0625rem;
+    color: #666d89;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.005rem;
+    height: 1.375rem;
+    overflow: hidden;
+}
+.about-us__friend__p{
+    color: #767e9e;
+    flex-basis: 100%;
+    line-height: 1.35rem;
+    letter-spacing: -0.0038rem;
+}
+.about-us__icon{
+display: flex;
+width: 9.625rem;
+justify-content: space-between;
+margin-top: 1.4375rem;
+}
+.about-us__bottom{
+    background-color: #ffffff;
+}
+
+// $image-gap: 32px;
+
+// .about-us {
+//     padding: 30px 0 100px 0;
+// }
+
+// .about-us__title {
+//     margin: 0 0 14px;
+// }
+
+// .about-us__description {
+//     margin: 0 0 45px;
+// }
+
+// .employee-container {
+//     padding-right: $image-gap;
+// }
+
+// .employee {
+//     display: flex;
+//     padding: 35px;
+//     position: relative;
+//     width: calc(30% - $image-gap);
+// }
+
+// .employee__name {
+//     margin: 0;
+// }
+
+// .employee__title {
+//     @include font($size: 1.4rem, $weight: normal);
+//     margin: 0;
+// }
+
+// .employee__contact {
+//     @include font($size: 1.4rem, $weight: normal);
+//     color: $color-link;
+//     text-decoration: none;
+//     &:hover {
+//         text-decoration: underline;
+//     }
+// }
+
+// .employee__photo {
+//     width: 98px;
+//     height: 98px;
+//     border-radius: 50%;
+//     position: absolute;
+//     right: -$image-gap;
+//     top: 20px;
+//     box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.15);
+// }

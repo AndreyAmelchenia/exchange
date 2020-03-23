@@ -1,0 +1,22 @@
+.our-services{
+ 
+    height: 30.875rem;
+    background: $color-our-services;
+
+}
+
+.our-service__layout{
+    display: flex;
+    width: 18.75rem;
+    height: 6rem;
+    align-items: flex-start;
+    margin-bottom: 1.6875rem;
+    overflow:hidden;
+}
+.our-service__layout__text{
+    margin-left: 1.125rem;
+}
+
+.our-services__bottom{
+    background: $color-our-services__bottom;
+}

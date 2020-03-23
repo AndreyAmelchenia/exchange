@@ -1,0 +1,49 @@
+.icon_{
+    &_facebook{
+        @include icon (
+        url(../../assets/svg/icon__facebook.svg),
+        url(../../assets/svg/icon__facebook_color.svg)
+        )
+    }
+    &_google{
+        @include icon (
+        url(../../assets/svg/icon__google+.svg),
+        url(../../assets/svg/icon__google+_color.svg)
+        )
+    }
+    &_twitter{
+        @include icon (
+        url(../../assets/svg/icon__twitter.svg),
+        url(../../assets/svg/icon__twitter_color.svg)
+        )
+    }
+    &_linkedin{
+        @include icon (
+        url(../../assets/svg/icon__linkedin.svg),
+        url(../../assets/svg/icon__linkedin_color.svg)
+        )
+    }   
+    
+}
+
+.slider-block__arrow{
+    display: block; 
+    z-index: 1;
+    width: 16px;
+    height: 27px;
+    &_left{
+        margin-top: -5px;
+        margin-left: 2px;
+        background: url(../../assets/image/arrow_left.png);
+        &:hover{
+            background: url(../../assets/image/arrow_left_mod.png);
+        }
+    }
+    &_right{
+        margin-top: -3px;
+        background: url(../../assets/image/arrow_right.png);
+        &:hover{
+            background: url(../../assets/image/arrow_right_mod.png);
+        }
+    }
+}

@@ -1,0 +1,42 @@
+.wrapper{
+    display: flex;
+    width: 58.75rem;
+    margin: auto;
+    height: 100%;
+    &__header{
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__slider-block{
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__our-services{
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-content: flex-start; 
+    }    
+    &__portfolio {
+        flex-flow:column;
+        align-content: flex-start;
+    }
+
+}
+.bottom{
+    width: 63.75rem;
+    height: 0.375rem;
+    margin: auto;
+}
+.bottom_size{
+    height: 5.9375rem;
+}
+// .wrapper {
+//     max-width: $content-width;
+//     margin: auto;
+//     @include media-laptop {
+//         padding: 0 46px;
+//     }
+//     @include media-mobile {
+//         padding: 0 21px;
+//     }
+// }
