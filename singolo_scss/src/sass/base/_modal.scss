@@ -1,36 +1,76 @@
-.overlay {
+.overlay{
     position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
-    background-color: $color-overlay;
+    top: 0;
+    left: 0;
+    background: $color-overlay;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.modal {
-    position: relative;
-    border-radius: 10px;
-    background-color: $color-light;
-    width: 675px;
-    min-height: 120px;
-    max-height: 90%;
-    overflow: auto;
-    @extend %custom-scroll;
-
-    @include media-tablet {
-        width: 90%;
-    }
+.modal{
+    color: $color-modal_text;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 30px;
+    width: 40%;
+    height: 50%;
+    background: $color-modal;
+    border: $color-modal_border;
 }
 
-.modal__close-icon {
-    position: absolute;
-    top: 30px;
-    right: 26px;
+.content{
+    width: 90%;
+}
+.modal_button{
+    color: $color-modal_text;
+    height: 2.4rem;
+    width: 7.2rem;
+    border-radius: 5px;
+    background-color: $color-get-a-quote__button;
+    border: 0;
     cursor: pointer;
-    svg {
-        pointer-events: none;
+    &:hover{
+        background-color: $color-get-a-quote__button_active;
     }
 }
+// .overlay {
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     background-color: $color-overlay;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+// }
+
+// .modal {
+//     position: relative;
+//     border-radius: 10px;
+//     background-color: $color-light;
+//     width: 675px;
+//     min-height: 120px;
+//     max-height: 90%;
+//     overflow: auto;
+//     @extend %custom-scroll;
+
+//     @include media-tablet {
+//         width: 90%;
+//     }
+// }
+
+// .modal__close-icon {
+//     position: absolute;
+//     top: 30px;
+//     right: 26px;
+//     cursor: pointer;
+//     svg {
+//         pointer-events: none;
+//     }
+// }

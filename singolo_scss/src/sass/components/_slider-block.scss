@@ -5,10 +5,8 @@
 
 /*block slider image*/
 .slider-block__sliders{
-    z-index: 0;
-    width: 900px;
+    max-width: 900px;
     display: flex;
-    left: 38px;
     overflow: hidden;
 }
 .slider-block__slid{
@@ -39,8 +37,6 @@
     overflow:hidden;
 }
 .slider-block__vertical__body img{
-    top: -135px;
-    left: -14px;
     position: relative;
 }
 .slider-block__horizontal{
@@ -62,8 +58,6 @@
     overflow:hidden;
 }
 .slider-block__horizontal__body img{
-    top: -119px;
-    left: -125px;
     position: relative;
 }
 .slider-block__next{
@@ -77,7 +71,6 @@
     position: relative;
 }
 .slider-block__second__body img{
-
     width: 254.91px;
     height: 513px;
 }

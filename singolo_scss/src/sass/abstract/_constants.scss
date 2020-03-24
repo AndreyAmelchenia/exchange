@@ -6,17 +6,41 @@ $color-slider-block: linear-gradient(90deg, #323746 0%, #f06c64 0%);
 $color-slider-block__bottom: #ea676b;
 $color-our-services: #f2f2f2;
 $color-our-services__bottom: #ffffff;
+$color-portfolio__bottom: $color-header__bottom;
+$color-about-us: $color-our-services;
+$color-about-us__bottom: $color-our-services__bottom;
+$color-get-a-quote: #f06c64;
+$color-get-a-quote_bottom: $color-slider-block__bottom;
+
 
 //element
 $color-link: #ffffff;
 $color-link_active:#f06c64;
 $color-border__body:#c7c7c7 solid 3px;
+$color-portfolio__item_active: $color-link;
+$color-portfolio__item_border_active: 1px solid $color-link;
+$color-portfolio__item: #767e9e;
+$color-portfolio__item_border: 1px solid $color-portfolio__item;
+$color-portfolio__image_active: $color-link_active solid 5px;
+$color-overlay: #0008;
+$color-modal:$color-get-a-quote;
+$color-modal_border:#d6564f solid 2px;
+$color-get-a-quote__input:#d6564f;
+$color-get-a-quote__button:#ac413c;
+$color-get-a-quote__button_active:#8d3834;
+
 
 //text
 $color-footer_text: #666d89;
 $color-our-service__h: $color-footer_text;
 $color-our-service__p: #767e9e;
-
+$color-portfolio__h: $color-footer_text;
+$color-portfolio__p: $color-our-service__p;
+$color-about-us__h:$color-footer_text;
+$color-about-us__p: $color-our-service__p;
+$color-get-a-quote_text:#f0d8d9;
+$color-get-a-quote__input_text:#f48c8f;
+$color-modal_text:#ac413c;
 
 
 

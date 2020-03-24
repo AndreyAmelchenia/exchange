@@ -1,6 +1,7 @@
 header{
     position: fixed;
-    width: 63.75rem;
+    max-width: 63.75rem;
+    width: 100vw;
     height: 5.5625rem;
     background: $color-header;
     margin: auto;

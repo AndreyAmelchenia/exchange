@@ -5,7 +5,7 @@
 }
 
 body, html{
-    width: 63.75rem;
+    max-width: 63.75rem;
     margin: auto;
   }
 
@@ -19,25 +19,29 @@ h2, h3{
 }
 
 h1{
-    font-weight: 700;
     font-size: 1.5625rem;
-    text-align: left;
 }
 
-h2{
-    font-size: 1.875rem;
-}
+
 .h2{
     font-size: 1.875rem;
+    margin-top: 3.6875rem;
+    letter-spacing: -0.015rem;
     &_our-service{
-        letter-spacing: -0.01rem;
-        margin-top: 3.6875rem;
         color: $color-our-service__h;
     }
+    &_portfolio{
+        color: $color-portfolio__h;
+    }
+    &_about-us{
+        color: $color-about-us__h;
+    }
+    &_get-a-quote{
+        color: $color-get-a-quote_text;
+        margin-bottom: 0.6em;
+    }
 }
-h3{
-    font-size: 1.125rem;
-}
+
 .h3{
     font-size: 1.125rem;
     &_our-service{
@@ -45,6 +49,21 @@ h3{
         color: $color-our-service__h;
         margin-bottom: 0.5rem;
         letter-spacing: -0.005rem;
+    }
+    &_about-us{
+        margin-top: 0.94rem;
+        margin-left: -0.0625rem;
+        color: $color-about-us__h;
+        margin-bottom: 0.5rem;
+        letter-spacing: -0.005rem;
+        height: 1.375rem;
+        overflow: hidden;
+    }
+    &_get-a-quote{
+        margin-top: -0.125rem;
+        color: $color-get-a-quote_text;
+        margin-bottom: 0.525rem;
+        letter-spacing: -0.007em;
     }
 }
 
@@ -54,11 +73,13 @@ h3{
         font-size: 1.125rem;
         line-height: 1.875rem;
         font-weight: 300;
+        overflow: hidden;
     }
     &_second{
         text-align: justify;
         font-size: 0.75rem;
         line-height: 1.375rem;
+        overflow: hidden;
     }
     &_our-service{
         margin-top: 1.125rem;
@@ -68,7 +89,38 @@ h3{
             color: $color-our-service__p;
  
         }
+    }    
+    &_portfolio{
+        margin-top: 1.125rem;
+        color: $color-portfolio__p;
+        margin-bottom: 0.6875rem;
     }
+    &_about-us{
+        margin-top: 1.125rem;
+        color: $color-about-us__p;
+        margin-bottom: 2.8rem;
+        &__friend{
+            color: $color-about-us__p;
+            line-height: 1.35rem;
+            letter-spacing: -0.0038rem;
+        }
+    }
+    &_get-a-quote{
+        color: $color-get-a-quote_text;
+        margin-bottom: 2.7rem;
+        &_contact{
+            color: $color-get-a-quote_text;
+            line-height: 1.37rem;
+            letter-spacing: -0.003em;
+            margin-bottom: 1.6875rem;
+        }
+    }
+    &_modal{
+        word-wrap: break-word;
+        height: 120px;
+    }
+
+    
 }
 
 

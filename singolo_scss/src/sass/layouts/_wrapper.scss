@@ -1,7 +1,6 @@
 .wrapper{
     display: flex;
-    width: 58.75rem;
-    margin: auto;
+    margin: auto 40px;
     height: 100%;
     &__header{
         justify-content: space-between;
@@ -18,9 +17,15 @@
     }    
     &__portfolio {
         flex-flow:column;
+    }
+    &__about-us{
+        flex-flow: column;
+    }
+    &__get-a-quote{
+        flex-wrap: wrap;
+        justify-content: space-between;
         align-content: flex-start;
     }
-
 }
 .bottom{
     width: 63.75rem;

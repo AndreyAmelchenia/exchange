@@ -1,134 +1,46 @@
 .get-a-quote{
-    width: 63.75rem;
     height: 40.5rem;
-    background: #f06c64;
-    margin: auto;
+    background: $color-get-a-quote;
 }
-.get-a-quote__wrapper{
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-content: flex-start;
-}
-.get-a-quote__h2{
-    color: #f0d8d9;
-    margin-top: 1.98em;
-    margin-bottom: 0.6em;
-    flex-basis: 100%;
-    letter-spacing: -0.015rem;
-}
-.get-a-quote__p{
-    color: #f0d8d9;
-    flex-basis: 100%;
-    margin-bottom: 2.7rem;
-}
-.get-a-quote__overlay{
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    background: #0008;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.get-a-quote__overlay_h{
-    display: none;
-}
-.get-a-quote__modal{
-    color: #ac413c;
-    display: flex;
-    flex-flow: column;
-    justify-content: space-around;
-    align-items: center;
-    position: relative;
-    border-radius: 5px;
-    width: 30%;
-    height: 50%;
-    background: #f06c64;
-    border: #d6564f solid 2px;
-}
-.get-a-quote__content{
-    width: 90%;
-}
+
 .get-a-quote__form{
-    display: flex;
     flex-basis: 38.75rem;
-    flex-flow: column;
-    align-content: flex-start;
 }
-.get-a-quote__form__modal,
-.get-a-quote__form__detail,
-.get-a-quote__form__input{
-    width: 36.9rem;
-    font-size: 0.75rem;
-    font-weight: 400;
-    text-align: left;
-    color: #f48c8f;
-    border-radius: 5px;
-    background-color: #d6564f;
-    border: 0;
-}
-.get-a-quote__form__input{
+
+.get-a-quote__input{
     height: 2.4rem;
     padding: 0 0.875rem 0 0.875rem;
     margin-bottom: 0.975rem;
-}
-.get-a-quote__form__detail::placeholder,
-.get-a-quote__form__input::placeholder{
-    color: #f48c8f;
-}
-.get-a-quote__form__detail{
-    height: 11.3rem;
-    padding: 0.625rem 0.875rem 0.625rem 0.875rem;
-    resize: none;
-    margin-bottom: 0.975rem;
-}
-.get-a-quote__form__modal{
-    color: #ac413c;
-    height: 30%;
-    width: 90%;
-    padding: 0.625rem 0.875rem 0.625rem 0.875rem;
-    resize: none;
-    margin-bottom: 0.975rem;
-}
-.get-a-quote__form__button{
-    color: #f48c8f;
-    border: #d6564f;
-    border-radius: 5px;
-    width: 7.2rem;
+    width: 36.9rem;
     font-size: 0.75rem;
-    font-weight: 400;
-    text-align: center;
-    height: 2.4rem;
-    background-color: #ac413c;
+    color: $color-get-a-quote__input_text;
+    border-radius: 5px;
+    background-color: $color-get-a-quote__input;
+    border: 0;
+    &__detail{
+        height: 11.3rem;
+        padding: 0.625rem 0.875rem 0.625rem 0.875rem;
+        resize: none;
+    }
+    &__button{
+        width: 7.2rem;
+        background-color: $color-get-a-quote__button;
+        cursor: pointer;
+        &:hover{
+            background-color: $color-get-a-quote__button_active;
+        }
+    }
+    &::placeholder{
+        color: $color-get-a-quote__input_text;
+    }
 }
-.get-a-quote__form__button:hover{
-    border: #c04b45;
-    background-color: #8d3834;
-    cursor: pointer;
-}
+
 .get-a-quote__contact{
     flex-basis: 18.75rem;
-    display: flex;
-    flex-flow: column;
-    align-self: start;
 }
-.get-a-quote__contact__h3{
-    margin-top: -0.125rem;
-    color: #f0d8d9;
-    margin-bottom: 0.525rem;
-    letter-spacing: -0.007em;
-}
-.get-a-quote__contact__p{
-    color: #f0d8d9;
-    line-height: 1.37rem;
-    letter-spacing: -0.003em;
-    margin-bottom: 1.6875rem;
-}
+
 .get-a-quote__contact__link{
     display: flex;
-    justify-content: left;
     margin-bottom: 0.4375rem;
     
 }
@@ -139,11 +51,11 @@
     margin-right: 0.625rem;
 }
 .get-a-quote__contact__link a{
-    color: #f0d8d9;
+    color: $color-get-a-quote_text;
 }
 .get-a-quote__contact__link a:hover {
-    color: #d6564f;
+    color: $color-get-a-quote__button_active;
 }
 .get-a-quote__bottom{
-    background: #ea676b;
+    background: $color-get-a-quote_bottom;
 }

@@ -9,17 +9,17 @@ class ContentModal {
     // генерация контента для объекта Modal 
     generateContent(){
         let template = `<h3>The letter was sent</h3>`;
-        template += `<p class = "p_first" >Name: ${this.name}</p>`
-        template += `<p class = "p_first" >email: ${this.email}</p>`
+        template += `<p class = "p_first">Name: ${this.name}</p>`
+        template += `<p class = "p_first">email: ${this.email}</p>`
         if (this.subject){
-            template += `<p class = "p_first" >Subject: ${this.subject}.</p>`
+            template += `<p class = "p_first">Subject: ${this.subject}.</p>`
         } else {
-            template += `<p class = "p_first" >Without subject.</p>`
+            template += `<p class = "p_first">Without subject.</p>`
         }
         if (this.cont_text){
-           template += `<textarea class = "get-a-quote__form__modal" name="text" readonly>Subject: ${this.cont_text}.</textarea>` 
+           template += `<p class = "p_first p_modal">Description: ${this.cont_text}.</p>`
         } else {
-           template += `<textarea class = "get-a-quote__form__modal" >Without description.</textarea>`
+           template += `<p class = "p_first">Without description.</p>`
         }
         return template;
     }
@@ -35,9 +35,9 @@ class Modal {
     }
     buildModal(content)  {
         this.overlay = this.createNode(this.overlay, 'div',this.classes);
-        this.modal = this.createNode(this.modal, 'div','get-a-quote__modal');
-        this.modalContent =this.createNode(this.modalContent, 'div','get-a-quote__content');
-        this.modalBtn = this.createNode(this.modalBtn, 'button', 'get-a-quote__form__button');
+        this.modal = this.createNode(this.modal, 'div','modal');
+        this.modalContent =this.createNode(this.modalContent, 'div','content');
+        this.modalBtn = this.createNode(this.modalBtn, 'button', 'modal_button');
         this.modalBtn.innerHTML = 'Ok';
         this.setContent(content);
         this.appendElem();
@@ -68,7 +68,7 @@ class Modal {
             document.querySelector(".get-a-quote__form > input:nth-child(1)").value ='';
             document.querySelector(".get-a-quote__form > input:nth-child(2)").value = '';
             document.querySelector(".get-a-quote__form > input:nth-child(3)").value = '';
-            document.querySelector(".get-a-quote__form__detail").value = '';
+            document.querySelector(".get-a-quote__input__detail").value = '';
             if(classEvent.contains(this.modalBtn.classList) ){
             let name = `.${this.overlay.className}`
             document.querySelector(name).remove();
@@ -98,9 +98,9 @@ const headerListClassMod = 'header__list__item_mod';
 const bottomSize = 'bottom_size';
 //portTagsList
 const portTags = document.querySelector('.portfolio__list');
-const portTagsListClass = 'portfolio__link';
-const portTagsList = document.querySelectorAll('.portfolio__link');
-const portTagsListClassMod = 'portfolio__link_color';
+const portTagsListClass = 'portfolio__item';
+const portTagsList = document.querySelectorAll('.portfolio__item');
+const portTagsListClassMod = 'portfolio__item_color';
 
 
 
@@ -321,12 +321,12 @@ let port_imgs = document.querySelector('.portfolio__images').querySelectorAll('i
 port_imgs.forEach((el) => {
     el.addEventListener('click', (event) =>  {
         port_imgs.forEach(el => el.id = '');
-        event.target.id='portfolio__image_activ';
+        event.target.id='portfolio__image_active';
     } )
 } )
 
 const addClick = () =>{
-    document.querySelector('.get-a-quote__form__button').addEventListener('click', (event) =>{
+    document.querySelector('.get-a-quote__input__button').addEventListener('click', (event) =>{
         event.preventDefault();
         generateModal();
     })
@@ -336,7 +336,7 @@ const generateModal = () => {
     let name = document.querySelector(".get-a-quote__form > input:nth-child(1)").value;
     let email = document.querySelector(".get-a-quote__form > input:nth-child(2)").value;
     let subject = document.querySelector(".get-a-quote__form > input:nth-child(3)").value;
-    let cont_text = document.querySelector(".get-a-quote__form__detail").value;
+    let cont_text = document.querySelector(".get-a-quote__input__detail").value;
     if(name && (email.indexOf('@') > 0)){
         let content = new ContentModal(name, email, subject, cont_text);
         renderModal(content.generateContent());
@@ -344,6 +344,6 @@ const generateModal = () => {
 }
 
 const renderModal = (content) =>{
-    let modal = new Modal('get-a-quote__overlay');
+    let modal = new Modal('overlay');
     modal.buildModal(content);
 }
