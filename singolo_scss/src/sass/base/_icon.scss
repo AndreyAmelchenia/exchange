@@ -28,21 +28,24 @@
 
 .slider-block__arrow{
     z-index: 1;
-    width: 1.6vw;;
-    height: 2.7vw;
+    width: 1.7%;
+    height: 4.5%;
+    background-size: contain;
+    background-position: left;
+    background-repeat: no-repeat;
     &_left{
-        margin-top: -5px;
-        margin-left: 2px;
-        background: url(../../assets/image/arrow_left.png);
+        // margin-top: -5px;
+        // margin-left: 2px;
+        background-image: url(../../assets/image/arrow_left.png);
         &:hover{
-            background: url(../../assets/image/arrow_left_mod.png);
+            background-image: url(../../assets/image/arrow_left_mod.png);
         }
     }
     &_right{
-        margin-top: -3px;
-        background: url(../../assets/image/arrow_right.png);
+        // margin-top: -3px;
+        background-image: url(../../assets/image/arrow_right.png);
         &:hover{
-            background: url(../../assets/image/arrow_right_mod.png);
+            background-image: url(../../assets/image/arrow_right_mod.png);
         }
     }
 }

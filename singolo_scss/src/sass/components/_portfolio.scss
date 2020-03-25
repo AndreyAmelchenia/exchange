@@ -1,5 +1,5 @@
 .portfolio{
-    height: 53.9375rem;
+    padding-bottom: 66px;
     background: #2d303a;
 }
 .portfolio__list{
@@ -29,24 +29,43 @@
 .portfolio__images{
     display: flex;
     flex-wrap: wrap;
-    height: 37.5625rem;
+    max-height: 37.5625rem;
+    height: 58.92vw;
     justify-content: space-between;
+    //align-content: space-between;
     overflow: hidden;
     margin-top: 1.375rem;
+    &:nth-child(8){
+        display: none;
+    }
+    @include media-tablet{
+        max-height: 808px;
+        height: 105.21vw;
+    }
 }
 
 .portfolio__image{
-    width: 13.75rem;
-    height: 11.6874rem;
+    width: calc((100% - 60px) / 4);
+    height: calc((100% - 40px) / 3);
+    @include media-tablet{
+        width: calc((100% - 40px) / 3);
+        height: calc((100% - 60px) / 4);
+    }
     margin-bottom: 1.25rem;
     overflow:hidden;
+    &:nth-child(n + 13){
+        display: none;
+    }
 }
+
 #portfolio__image_active{
-    width: 210px;
-    height: 177px;
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
     border: $color-portfolio__image_active;
 }
 .portfolio__image img{
+    width: 100%;
+    height: 100%;
     position: relative;
 }
 .portfolio__bottom{

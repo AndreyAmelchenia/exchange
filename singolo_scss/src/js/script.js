@@ -182,7 +182,7 @@ const elemScrollHandler = (elemList) => {
 // SLIDER (!исправить, если будет время)
 let left = -20;
 let right = 0;
-let left_arr = [0,900];
+let left_arr = [0,100];
 let poz_left = left;
 let poz_right = right;
 const color = ['#648BF0','#f06c64'];
@@ -194,13 +194,13 @@ let back = document.querySelectorAll('.slider-block');
 const chek_left = document.querySelector('.slider-block__arrow_left');
 chek_left.addEventListener('click', () => {
     let l1 = -left_arr[0];
-    let l2 = left_arr[0]-1800;
+    let l2 = left_arr[0]-200;
     let interval = setInterval(() => {
         back.forEach((item) =>{
             let deg = 90;
             item.style.background = `linear-gradient(${deg}deg, ${color[0]} ${poz_left}%, ${color[1]} ${poz_right}%)`;
-            slider_first.style.left = `${l1}px`;
-            slider_second.style.left = `${l2}px`;
+            slider_first.style.left = `${l1}%`;
+            slider_second.style.left = `${l2}%`;
             if (poz_left === 100){
                 left_arr = left_arr.reverse();
                 color.reverse();
@@ -209,12 +209,12 @@ chek_left.addEventListener('click', () => {
                 clearInterval(interval);
                 return ;
             }
-            l2= l2+900/240;
-            l1= l1+900/240;
-            poz_right+=0.5  ;
-            poz_left+=0.5;
+             l2= l2+100/120;
+             l1= l1+100/120;
+            poz_right+=1;
+            poz_left+=1;
         })
-    }, 3)
+    }, 6)
 })
 
 chek_right.addEventListener('click', () => {
@@ -224,8 +224,8 @@ chek_right.addEventListener('click', () => {
         back.forEach((item) =>{
             let deg = -90;
             item.style.background = `linear-gradient(${deg}deg, ${color[0]} ${poz_left}%, ${color[1]} ${poz_right}%)`;
-            slider_first.style.left = `${l1}px`;
-            slider_second.style.left = `${l2}px`;
+            slider_first.style.left = `${l1}%`;
+            slider_second.style.left = `${l2}%`;
             if (poz_left === 100){
                 left_arr = left_arr.reverse();
                 color.reverse();
@@ -234,12 +234,12 @@ chek_right.addEventListener('click', () => {
                 clearInterval(interval);
                 return ;
             }
-            l2= l2-900/240;
-            l1= l1-900/240;
-            poz_right+=0.5  ;
-            poz_left+=0.5;
+            l2= l2-100/120;
+            l1= l1-100/120;
+            poz_right+=1;
+            poz_left+=1;
         })
-    }, 3)
+    }, 6)
 })
 //DISPLAY none
 let dis_vert = document.querySelector('.slider-block__vertical');
