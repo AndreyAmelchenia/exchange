@@ -42,6 +42,10 @@
         max-height: 808px;
         height: 105.21vw;
     }
+    @include media-mobile{
+        max-height: 561.5px;
+        height: 149.73vw;
+    }
 }
 
 .portfolio__image{
@@ -55,6 +59,14 @@
     overflow:hidden;
     &:nth-child(n + 13){
         display: none;
+        
+    }
+    @include media-mobile{
+        width: calc((100% - 20px) / 2);
+        height: calc((100% - 60px) / 4);
+        &:nth-child(n + 9){
+            display: none;
+        }
     }
 }
 

@@ -552,6 +552,12 @@ footer {
     height: 105.21vw;
   }
 }
+@media (max-width: 375px) {
+  .portfolio__images {
+    max-height: 561.5px;
+    height: 149.73vw;
+  }
+}
 
 .portfolio__image {
   width: calc((100% - 60px) / 4);
@@ -567,6 +573,15 @@ footer {
 }
 .portfolio__image:nth-child(n+13) {
   display: none;
+}
+@media (max-width: 375px) {
+  .portfolio__image {
+    width: calc((100% - 20px) / 2);
+    height: calc((100% - 60px) / 4);
+  }
+  .portfolio__image:nth-child(n+9) {
+    display: none;
+  }
 }
 
 #portfolio__image_active {
