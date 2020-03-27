@@ -16,9 +16,15 @@
     flex-flow: column;
     justify-content: space-around;
     align-items: center;
-    border-radius: 30px;
-    width: 40%;
+    border-radius: 5px;
+    width: 70vw;
     height: 50%;
+    // @include media-tablet{
+    //     width: 60%;
+    // }
+    // @include media-mobile{
+    //     width: 80%;
+    // }
     background: $color-modal;
     border: $color-modal_border;
 }
@@ -27,7 +33,7 @@
     width: 90%;
 }
 .modal_button{
-    color: $color-modal_text;
+    color: $color-get-a-quote__input_text;
     height: 2.4rem;
     width: 7.2rem;
     border-radius: 5px;

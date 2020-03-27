@@ -1,28 +1,45 @@
 .about-us{
-    height: 45.5rem;
+    min-height: 45.5rem;
     background: $color-about-us;
+    padding-bottom: 46px;
+    @include media-mobile{
+        max-height: calc( 3 * 45.5rem); 
+        }
 }
 
 .about-us__friends{
  display: flex;
  justify-content: space-between;
+ @include media-mobile{
+    flex-direction: column; 
+    }
 }
 
 .about-us__friend{
-    width: 18.75rem;
+    width: calc((100% - 40px) / 3);
+    max-height: 451px;
+    padding-bottom: 20px;
+    @include media-mobile{
+        width: 100%;
+    }
 }
 
 .about-us__friend__photo{
-    width: 18.75rem;
-    height:18.75rem;;
+    width: 100%;
+    max-height: 300px;
     overflow:hidden;
+    & img{
+        width: 100%;
+        height: 100%;
+    }
 }
 
 .about-us__icon{
 display: flex;
-width: 9.625rem;
-justify-content: space-between;
-margin-top: 1.4375rem;
+flex-wrap: wrap;
+// width: 154px;
+justify-content: left;
+//margin-top: 1.4375rem;
 }
 .about-us__bottom{
     background-color: $color-about-us__bottom;

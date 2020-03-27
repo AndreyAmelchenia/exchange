@@ -1,31 +1,41 @@
 .get-a-quote{
-    height: 40.5rem;
+    min-height: 40.5rem;
     background: $color-get-a-quote;
 }
 
 .get-a-quote__form{
-    flex-basis: 38.75rem;
+    width: 65.96%;
+    max-height: 40.5rem;
+    @include media-mobile{
+        width: 100%;
+    }
 }
 
 .get-a-quote__input{
+    box-sizing: border-box;
     height: 2.4rem;
     padding: 0 0.875rem 0 0.875rem;
     margin-bottom: 0.975rem;
-    width: 36.9rem;
+    width: 100%;
     font-size: 0.75rem;
     color: $color-get-a-quote__input_text;
     border-radius: 5px;
     background-color: $color-get-a-quote__input;
     border: 0;
     &__detail{
-        height: 11.3rem;
+        box-sizing: border-box;
+        height: 202px;
         padding: 0.625rem 0.875rem 0.625rem 0.875rem;
         resize: none;
     }
     &__button{
         width: 7.2rem;
+        margin-bottom: 64px;
         background-color: $color-get-a-quote__button;
         cursor: pointer;
+        @include media-mobile{
+            width: 100%;
+        }
         &:hover{
             background-color: $color-get-a-quote__button_active;
         }
@@ -36,7 +46,12 @@
 }
 
 .get-a-quote__contact{
-    flex-basis: 18.75rem;
+    
+    width: 31.9%;
+    @include media-mobile{
+        width: 100%;
+        margin-bottom: 64px;
+    }
 }
 
 .get-a-quote__contact__link{

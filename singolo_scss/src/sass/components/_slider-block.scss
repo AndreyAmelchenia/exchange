@@ -6,9 +6,10 @@
 
 /*block slider image*/
 .slider-block__sliders{
-    width: 95.74%;
+    width: calc(100% - 32px);
     height: 100%;
     display: flex;
+    justify-content: space-between;
     overflow: hidden;
 }
 .slider-block__slid{
@@ -22,20 +23,29 @@
 }
 
 .slider-block__vertical{
-    top: 9%;
-    left: 5.5%;
-    width: 27%;
+    // top: 9%;
+    // left: 6.5%;
+    width:calc(240% / 9);
+    background-position: center;
     //max-height: 30.25rem;
-    height: 81.48%;
-    position: absolute;
-    background-image: url(../../assets/image/vertical_1.png);
+    background-image: '';
+    height: 100%;
+    position: relative;
+    //background-image: url(../../assets/image/phone-vertical_1.png);
     background-size: contain;
     background-repeat: no-repeat; 
-    &__img{
-        
-        background-image: url(../../assets/image/vertical.png); 
-    }
+    
 }
+.slider-block__vertical__img{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-image: url(../../assets/image/phone-vertical.png);
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center;
+} 
+
 // .slider-block__vertical__body{
 //     // border: $color-border__body;
 //     // border-radius: 4px;
@@ -50,35 +60,54 @@
 
 // }
 
-.slider-block__vertical__body img{
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
+// .slider-block__vertical__body img{
+//     width: 100%;
+//     height: 100%;
+//     position: relative;
+// }
+
 .slider-block__horizontal{
-    display: none;
-    width: 53.9%;
-    height: 40.57%;
+    // top: 30%;
+    // left: 42%;
+    width: calc(483% / 9);
+    //max-height: 30.25rem;
+    height: 100%;
     position: relative;
-    background-image: url(../../assets/image/horizontal_1.png);
+    //background-image: '';
+    background-image: url(../../assets/image/phone-horizontal_1.png);
     background-size: contain;
+    background-position: center;
     background-repeat: no-repeat; 
+    
 }
-.slider-block__horizontal__body{
-    border: $color-border__body;
-    border-radius: 4px;
-    top: 6%;
-    left: 12%;
-    width: 68.65%;
-    height: 76%;
-    position: relative;
-    overflow: hidden;
-}
-.slider-block__horizontal__body img{
+
+.slider-block__horizontal__img{
     width: 100%;
     height: 100%;
     position: relative;
-}
+    background-image: url(../../assets/image/phone-horizontal.png);;
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center;
+} 
+
+
+
+// .slider-block__horizontal__body{
+//     border: $color-border__body;
+//     border-radius: 4px;
+//     top: 6%;
+//     left: 12%;
+//     width: 68.65%;
+//     height: 76%;
+//     position: relative;
+//     overflow: hidden;
+// }
+// .slider-block__horizontal__body img{
+//     width: 100%;
+//     height: 100%;
+//     position: relative;
+// }
 .slider-block__next{
     display: flex;
     width: 63%;

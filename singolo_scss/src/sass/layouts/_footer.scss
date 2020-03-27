@@ -1,5 +1,5 @@
 footer{
-    width: 63.75rem;
+    max-width: 63.75rem;
     height: 4.75rem;
     background: $color-footer;
     margin: auto;
@@ -7,8 +7,14 @@ footer{
 .footer__wrapper{
     justify-content: space-between;
     align-content: center;
+    @include media-mobile{
+        justify-content: center;
+    }
 }
 .footer__copyright{
+    @include media-mobile{
+        display: none;
+    }
     color: $color-footer_text;
     margin-left: 0.125rem;
     margin-top: -0.125rem;

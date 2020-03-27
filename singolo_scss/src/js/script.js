@@ -88,6 +88,86 @@ class Modal {
     } 
 }
 
+// class Menu {
+//     constructor(classes){
+//         this.classes = classes;
+//         this.menu = '';
+//         this.menu_ul = '';
+//         this.menu_li = '';
+//         this.overlay = '';
+//     }
+//     buildModal(content)  {
+//         this.overlay = this.createNode(this.overlay, 'div',this.classes);
+//         this.menu = this.createNode(this.modal, 'div','menu');
+//         this.menu_ul =this.createUl(this.menu_ul, [],'menu_ul');
+//         this.menu_li = this.createNode(this.menu_li, 'button', 'menu_li');
+//         this.menu_burg = this.createNode(this.menu_li, 'button', 'menu_li');
+//         this.setContent(content);
+//         this.appendElem();
+//         this.bindEven();
+//         this.openModal();  
+//     }
+//     createNode (node, elem, ...classes){
+//         node = document.createElement(elem);
+//         node.classList.add(...classes);
+//         return node;
+//     }
+//     createUl (ul, name, class_ul, class_li){
+//         ul = document.createElement('ul');
+//         ul.classList.add(class_ul);
+//         name.forEach(el =>{
+
+//             let li = document.createElement('li');
+//             li.classList.add(class_li);
+//             li.innerHTML = el;
+//             ul.append(li);
+//         })
+//         return ul;
+//     }
+//     setContent(content){
+//         if(typeof content === 'string'){
+//             this.modalContent.innerHTML = content;
+//         } else{
+//             this.modalContent.innerHTML = '';
+//             this.modalContent.appendChild(content);
+//         }
+//     }
+//     appendElem(){
+//         this.menu_ul.append(this.menu_li);
+//         this.menu.append(this.menu_burg);
+//         this.menu.append(this.menu_ul);
+        
+//         this.overlay.append(this.menu);
+//     }
+//     bindEven(){
+//         this.modalBtn.addEventListener('click',(event) =>{
+//             let classEvent = event.target.classList;
+//             document.querySelector(".get-a-quote__form > input:nth-child(1)").value ='';
+//             document.querySelector(".get-a-quote__form > input:nth-child(2)").value = '';
+//             document.querySelector(".get-a-quote__form > input:nth-child(3)").value = '';
+//             document.querySelector(".get-a-quote__input__detail").value = '';
+//             if(classEvent.contains(this.modalBtn.classList) ){
+//             let name = `.${this.overlay.className}`
+//             document.querySelector(name).remove();
+//            }
+//         });
+//         /*  this.overlay.addEventListener('click',(event) =>{
+//             let classEvent = event.target.classList;
+//             if( classEvent.contains(this.overlay.classList)){
+            
+//             let name = `.${this.overlay.className}`
+//             document.querySelector(name).remove();
+//            }
+//         });*/
+//     }
+//     openModal(){
+//         document.body.append(this.overlay);
+//     } 
+// }
+
+
+
+
 
 //headerList
 const header = document.querySelector('.header__list');

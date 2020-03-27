@@ -1,11 +1,20 @@
 @mixin  icon ($url1,$url2) {
-    display: block; 
+    //display: block; 
     width: 2.1875rem;
+    //width: calc(35vw / 9.4);
     height: 2.1875rem;
-    background: $url1;
+    //height: calc(35vw / 9.4);
+    background-image: $url1;
+    background-size: contain;
+    margin-left: 5px;
+    background-repeat: no-repeat;
     &:hover{
-        background: $url2;
+        background-image: $url2;
     } 
+    // @include media-mobile{
+    //     width: calc(35vw / 3.75);
+    //     height: calc(35vw / 3.75);
+    // }
 }
 
 
